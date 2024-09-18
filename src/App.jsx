@@ -1,6 +1,7 @@
 import React, { Suspense, lazy, Fragment } from "react";
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout/index";
+import Layout from "./components/Layout/Layout";
+import Homepage from "./components/Homepage/views/Homepage";
 
 
 const Fallback = (
@@ -18,7 +19,8 @@ const App = () => {
         <Routes>
           {/* Aici bagi paginile faci o componenta noua Layout care contine navbar si footer -> las exemplu */}
 
-          <Route path="*" element={<Layout><div>BAAAAA</div></Layout>} />
+          <Route path="*" element={<Layout><Homepage /></Layout>} />
+
         </Routes>
       </Suspense>
     </Fragment>

@@ -1,18 +1,19 @@
 import React from 'react';
-// import Navbar from '../Navbar/index';
-// import Footer from '../Footer/index';
+import Navbar from '../navbar_and_footer/Navbar';
+import Footer from '../navbar_and_footer/Footer';
+
 
 const Layout = ({ children }) => {
     return (
         <>
             <div className="flex flex-col">
-                <header > Navbar </header>
+                <Navbar transparent />
 
                 <main className="flex-grow">
                     {children}
                 </main>
 
-                <footer>FOOTER</footer>
+                <Footer />
             </div>
         </>
 
