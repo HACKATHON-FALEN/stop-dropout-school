@@ -1,118 +1,70 @@
 import React from "react";
-
-import backgroundPicture from '../assets/img/Background.jpg'
+import Carousel from 'react-material-ui-carousel';
+import { Paper, Card, CardContent, Typography } from '@mui/material';
+import photo_1 from '../assets/img/photo1.jpg';
+import photo_2 from '../assets/img/photo2.jpg';
+import photo_3 from '../assets/img/photo3.jpg';
+import photo_4 from '../assets/img/photo4.jpg';
 
 const Post1 = () => {
+    const photos = [photo_1, photo_2, photo_3, photo_4];
+
     return (
         <>
-            <main className="profile-page">
-                <section className="relative block" style={{ height: "500px" }}>
-                    <div
-                        className="absolute mt-10 w-full h-full bg-center bg-cover"
-                        style={{
-                            backgroundImage: `url(${backgroundPicture})`
-                        }}
-                    >
-                        <span
-                            id="blackOverlay"
-                            className="w-full h-full absolute opacity-50 bg-black"
-                        ></span>
-                    </div>
-                    <div
-                        className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
-                        style={{ height: "70px" }}
-                    >
-                        <svg
-                            className="absolute bottom-0 overflow-hidden"
-                            xmlns="http://www.w3.org/2000/svg"
-                            preserveAspectRatio="none"
-                            version="1.1"
-                            viewBox="0 0 2560 100"
-                            x="0"
-                            y="0"
-                        >
-                            <polygon
-                                className="text-gray-300 fill-current"
-                                points="2560 0 2560 100 0 100"
-                            ></polygon>
-                        </svg>
-                    </div>
-                </section>
+            <main className="profile-page" style={{ marginTop: "80px" }}>
                 <section className="relative py-16 bg-gray-300">
                     <div className="container mx-auto px-4">
-                        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64">
+                        <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg">
                             <div className="px-6">
-                                <div className="flex flex-wrap justify-center">
-                                    <div className="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center mt-2">
-
-                                    </div>
-                                    <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
-                                        <div className="py-6 px-3 mt-32 sm:mt-0">
-                                            <button
-                                                className="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1"
-                                                type="button"
-                                                style={{ transition: "all .15s ease" }}
-                                            >
-                                                Urmarește
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div className="w-full lg:w-4/12 px-4 lg:order-1">
-
-                                    </div>
-                                </div>
+                                {/* Title */}
                                 <div className="text-center mt-12">
-
+                                    <h1 style={{ fontSize: '50px', fontWeight: 'bold' }}>Micii antreprenori</h1> {/* Large Title */}
                                 </div>
+
+                                {/* Carousel */}
+
+                                <div className="flex flex-wrap justify-center">
+                                    <div className="px-4">
+                                        <Carousel animation="slide" autoPlay={true} indicators={false}>
+                                            {photos.map((photo, index) => (
+                                                <Paper key={index}> {/* Optional, for material look */}
+                                                    <img
+                                                        src={photo}
+                                                        alt={`Photo ${index + 1}`}
+                                                        style={{ width: "100%", height: "auto", borderRadius: "15px" }} // Added borderRadius here
+                                                    />
+                                                </Paper>
+                                            ))}
+                                        </Carousel>
+
+                                        {/* Sample description */}
+                                        <p className="mt-4 text-lg leading-relaxed text-gray-800">
+                                            These are the young entrepreneurs who have worked hard to achieve their dreams.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                {/* New Card with Text */}
                                 <div className="mt-10 py-10 border-t border-gray-300 text-center">
-
                                     <div className="flex flex-wrap justify-center">
-
                                         <div className="w-full lg:w-9/12 px-4">
-                                            <h1 style={{ fontSize: '30px' }}>Teacher</h1>
-                                            <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                                                The profession that creates all other professions.
-                                            </p>
-                                            <div style={{ display: "flex", justifyContent: "space-between" }}>
-                                                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                                                    <a href="#">
-                                                        <img
-                                                            alt="Profile"
-                                                            src={""}
-                                                        />
-                                                    </a>
-                                                    <div class="p-5">
-                                                        <a href="#">
-                                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cine sunt?</h5>
-                                                        </a>
-                                                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Mă numesc Andra și fac parte din categoria oamenilor visători care cred în schimbare si in faptul ca impreună putem reusi...</p>
-                                                        <a href="/Post_1" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                            Citeste mai mult
-                                                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                                                    <a href="#">
-                                                        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-                                                    </a>
-                                                    <div class="p-5">
-                                                        <a href="#">
-                                                            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Micii antreprenori</h5>
-                                                        </a>
-                                                        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                                                        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                                                            Read more
-                                                            <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                                                            </svg>
-                                                        </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-
+                                            <Card elevation={3}>
+                                                <CardContent>
+                                                    <Typography variant="h4" gutterBottom>
+                                                        Micii antreprenori
+                                                    </Typography>
+                                                    <Typography variant="body1" component="p" paragraph>
+                                                        A venit timpul să vă prezint și micii eroi pentru care sunt „Doamna”. Clasa noastră este compusă din 6 elevi de clasa a IV-a și 4 elevi de clasa a III-a, iar deviza noastră este „A doua familie este la școală!”
+                                                    </Typography>
+                                                    <Typography variant="body1" component="p" paragraph>
+                                                        Gândul meu în educație a fost inspirat de echipa Teach for Romania, o organizație construită de oameni pentru oameni, dar asta nu înseamnă că valorile biblice și încrederea nu m-au atins și pe mine.
+                                                    </Typography>
+                                                    <Typography variant="body1" component="p" paragraph>
+                                                        Elevii măreției pe care i-am întâlnit sunt cu adevărat o comunitate de copii și tineri deseori neînțeleși, iar curajul lor de a visa este un dar pentru dezvoltarea României.
+                                                    </Typography>
+                                                </CardContent>
+                                            </Card>
                                         </div>
                                     </div>
                                 </div>
@@ -120,11 +72,9 @@ const Post1 = () => {
                         </div>
                     </div>
                 </section>
-            </main>
+            </main >
         </>
     );
-
-
-}
+};
 
 export default Post1;
