@@ -63,7 +63,7 @@ const Chat = ({ editorText }) => {
                     sendMessage("Bot", botMessage);
                 } catch (error) {
                     console.error("Error communicating with OpenAI:", error);
-                    sendMessage("Bot", "Sorry, there was an error processing your request.");
+                    sendMessage("Bot", "da ba cacatule.");
                 }
             }
         }
@@ -87,7 +87,7 @@ const Chat = ({ editorText }) => {
     return (
         <div className="fixed bottom-5 right-5 z-50">
             <button onClick={toggleChat} className="px-4 py-2 bg-orange-500 text-white font-medium rounded-lg shadow hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                Chat with A.I
+                Chat with Teacher
             </button>
             {isOpen && (
                 <div className="mt-2 w-96 bg-white rounded-lg shadow-lg p-4">
@@ -95,10 +95,10 @@ const Chat = ({ editorText }) => {
                         {messages.map((msg, index) => (
                             <div key={index} className={`flex items-end ${msg.sender === "User" ? "justify-end" : "justify-start"}`}>
                                 {msg.sender !== "User" && (
-                                    <img className="w-8 h-8 rounded-full" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdZ9dExjxM5bzlQbdh_gLIt2cWMOzQmil8TA&s" alt="Bot image" />
+                                    <img className="w-8 h-8 rounded-full" src="https://cdn-icons-png.freepik.com/512/180/180678.png" alt="Bot image" />
                                 )}
                                 <div className={`flex flex-col w-full max-w-[320px] leading-1.5 p-4 ${msg.sender === "User" ? "bg-blue-100 rounded-br-none" : "bg-gray-100 rounded-bl-none"} border border-gray-200`}>
-                                    <span className="text-sm font-semibold">{msg.sender === "User" ? "You" : "NIT ChatBot"}</span>
+                                    <span className="text-sm font-semibold">{msg.sender === "User" ? "You" : "Jeg"}</span>
                                     <p className="text-sm">{msg.content}</p>
                                     <span className="text-xs text-gray-500">{msg.timestamp}</span>
                                 </div>

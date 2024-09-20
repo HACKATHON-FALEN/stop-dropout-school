@@ -9,7 +9,7 @@ import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import { Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material'; // Import MUI Dialog
 
 // Import the local image for thumbnail usage
-import ALINImage from '../../mock-files/Pictures/ALIN.png'; // Adjust this path to the actual image location
+import JEGIMage from '../../mock-files/Pictures/jeg.png'; // Adjust this path to the actual image location
 
 // Set Chonky's default icon component
 setChonkyDefaults({ iconComponent: ChonkyIconFA });
@@ -39,12 +39,13 @@ const mockFiles = [
         id: 'pictures',
         name: 'Pictures',
         isDir: true,
+        thumbnailUrl: JEGIMage,
         children: [
             {
                 id: '5',
-                name: 'ALIN.png',
+                name: 'jeg.png',
                 isDir: false,
-                thumbnailUrl: ALINImage,
+                thumbnailUrl: JEGIMage,
             },
         ],
     },
