@@ -8,13 +8,11 @@ import { FileManagerComponent } from '@syncfusion/ej2-react-filemanager';
 const Layout = ({ children }) => {
     return (
         <>
-            <div className="flex flex-col">
-                <Navbar transparent />
-
-                <main className="flex-grow">
+            <div className="flex flex-col min-h-screen">
+                <header><Navbar transparent={false} /></header>
+                <main className="flex flex-col">
                     {children}
                 </main>
-
                 <Footer />
             </div>
         </>

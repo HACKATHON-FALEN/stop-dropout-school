@@ -1,7 +1,7 @@
 import React from "react";
 
-import FooterSmall from "../components/FooterSmall.js";
-import Navbar from "../../navbar_and_footer/Navbar.js";
+import FooterSmall from "../components/FooterSmall.jsx";
+import Navbar from "../../navbar_and_footer/Navbar.jsx";
 
 export default function Login() {
   return (

@@ -4,6 +4,7 @@ export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  console.log(props)
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -13,12 +14,18 @@ export default function Navbar(props) {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (!props.transparent) {
+      setIsScrolled(true);
+    } else {
+      window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+
+
+    }
   }, []);
 
   return (

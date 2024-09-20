@@ -7,6 +7,7 @@ import FileExplorer from "./components/FileExplorer/FileExplorer";
 import FileExplorerChonky from "./components/FileExplorer/FileExplorerChonky";
 import Chat from "./components/Chat/Chat";
 import Login from "./components/Login/views/Login";
+import Post1 from "./components/Posts/Post1/post1";
 
 
 const Fallback = (
@@ -25,6 +26,7 @@ const App = () => {
           {/* Aici bagi paginile faci o componenta noua Layout care contine navbar si footer -> las exemplu */}
 
           <Route path="*" element={<Layout><Homepage /></Layout>} />
+          <Route path="Post1" element={<Layout><Post1 /></Layout>} />
           <Route path="Profile" element={<Layout><Profile /></Layout>} />
           <Route path="FileExplorer" element={<Layout><FileExplorer></FileExplorer></Layout>} />
           <Route path="FileExplorer2" element={<Layout><FileExplorerChonky></FileExplorerChonky></Layout>} />
