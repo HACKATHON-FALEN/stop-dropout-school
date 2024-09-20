@@ -27,14 +27,14 @@ export default function Navbar(props) {
         (isScrolled
           ? "fixed top-0 left-0 w-full bg-white shadow-lg z-50"
           : "absolute top-0 left-0 w-full z-50") +
-        " flex flex-wrap items-center justify-between px-2 py-3 transition-all duration-200"
+        " flex flex-wrap items-center justify-between px-2 py-3 transition-all duration-300"
       }
     >
       <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
         <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
           <a
             className="inline-block mr-4 py-2 whitespace-nowrap uppercase"
-            href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
+            href="/"
           >
             <img
               src={isScrolled ? require("./assets/logo-colored.png") : require("./assets/logo-white.png")}

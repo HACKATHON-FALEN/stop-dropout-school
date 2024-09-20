@@ -3,6 +3,10 @@ import React from "react";
 
 import backgroundImage from '../assets/img/copii-defavorizati.jpg'
 import DonateButton from "./DonateButton";
+import farfuriiImage from '../assets/img/tablouri.png'
+import tablouImage from '../assets/img/img.y8lJ8Bjod3.jpg'
+
+import teachImage from '../assets/img/Teach.png'
 
 
 export default function Homepage() {
@@ -63,7 +67,7 @@ export default function Homepage() {
           </div>
         </div>
 
-        <section className="pb-20 bg-gray-300 -mt-0">
+        <section className="pb-20 -mt-0" style={{ backgroundColor: "#ffffff" }}>
           <div className="container mx-auto px-4">
             <div className="flex flex-wrap">
               <div className="lg:pt-12 pt-6 w-full md:w-4/12 px-4 text-center">
@@ -114,7 +118,15 @@ export default function Homepage() {
             </div>
 
 
-            <div className="flex flex-wrap items-center mt-32">
+
+
+
+
+
+
+
+
+            <div className="flex flex-wrap items-center mt-24">
               <div className="w-full md:w-5/12 px-4 mr-auto ml-auto">
                 <div className="text-gray-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-gray-100">
                   <i className="fas fa-user-friends text-xl"></i>
@@ -142,41 +154,112 @@ export default function Homepage() {
               </div>
 
               <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
-                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded-lg bg-pink-600">
+                <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 rounded-lg bg-pink-600">
                   <img
-                    alt="..."
-                    src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80"
-                    className="w-full align-middle rounded-t-lg"
+                    src={farfuriiImage} // Use the variable directly here
+                    alt="Basketball Image"
+                    className="w-full h-auto"
                   />
-                  <blockquote className="relative p-8 mb-4">
-                    <svg
-                      preserveAspectRatio="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 583 95"
-                      className="absolute left-0 w-full block"
-                      style={{
-                        height: "95px",
-                        top: "-94px"
-                      }}
-                    >
-                      <polygon
-                        points="-30,95 583,95 583,65"
-                        className="text-pink-600 fill-current"
-                      ></polygon>
-                    </svg>
-                    <h4 className="text-xl font-bold text-white">
-                      Top Notch Services
-                    </h4>
-                    <p className="text-md font-light mt-2 text-white">
-                      The Arctic Ocean freezes every winter and much of the
-                      sea-ice then thaws every summer, and that process will
-                      continue whatever happens.
-                    </p>
-                  </blockquote>
                 </div>
               </div>
 
+
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div className="container mx-auto py-12 px-6">
+              {/* Main wrapper for flexbox layout */}
+              <div className="flex flex-wrap -mx-4">
+                {/* Left side: Hexagonal image */}
+                <div className="w-full md:w-6/12 px-4">
+                  <div className="relative">
+                    <img
+                      src="https://www.bucuresti21km.ro/media/2012/Teach-1-930x620.jpg.webp"
+                      alt="Basketball Image"
+                      className="w-full h-auto"
+                      style={{
+                        clipPath:
+                          "polygon(50% 0%, 85% 10%, 100% 40%, 100% 70%, 85% 100%, 50% 100%, 15% 100%, 0% 70%, 0% 40%, 15% 10%)"
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Right side: Text with icons */}
+                <div className="w-full md:w-6/12 px-4 flex flex-col justify-center">
+                  {/* Donation section */}
+                  <div className="mb-8">
+                    <div className="flex items-center mb-4">
+                      <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
+                        <i className="fas fa-heart"></i>
+                      </span>
+                      <h3 className="text-xl font-semibold ml-4">Donate</h3>
+                    </div>
+                    <p className="text-gray-600">
+                      Help us rewrite the stories of at-risk children and families. Get involved!
+                    </p>
+                  </div>
+
+                  {/* Become a volunteer section */}
+                  <div className="mb-8">
+                    <div className="flex items-center mb-4">
+                      <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
+                        <i className="fas fa-clock"></i>
+                      </span>
+                      <h3 className="text-xl font-semibold ml-4">Become a Volunteer</h3>
+                    </div>
+                    <p className="text-gray-600">
+                      Volunteers are valuable members of the family. You too can donate your time!
+                    </p>
+                  </div>
+
+                  {/* Donate Your Birthday section */}
+                  <div className="mb-8">
+                    <div className="flex items-center mb-4">
+                      <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
+                        <i className="fas fa-birthday-cake"></i>
+                      </span>
+                      <h3 className="text-xl font-semibold ml-4">Donate Your Birthday</h3>
+                    </div>
+                    <p className="text-gray-600">
+                      Encourage friends and family to support us through the Donate Your Birthday campaign.
+                    </p>
+                  </div>
+
+                  {/* Redirect section */}
+                  <div>
+                    <div className="flex items-center mb-4">
+                      <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
+                        <i className="fas fa-folder"></i>
+                      </span>
+                      <h3 className="text-xl font-semibold ml-4">Redirect</h3>
+                    </div>
+                    <p className="text-gray-600">
+                      Part of your income tax paid to the government can support children. Find out how you can help!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+
           </div>
         </section>
 
