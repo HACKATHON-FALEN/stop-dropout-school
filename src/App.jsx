@@ -6,6 +6,7 @@ import Profile from "./components/Profile/views/Profile";
 import FileExplorer from "./components/FileExplorer/FileExplorer";
 import FileExplorerChonky from "./components/FileExplorer/FileExplorerChonky";
 import Chat from "./components/Chat/Chat";
+import Login from "./components/Login/views/Login";
 
 
 const Fallback = (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="FileExplorer" element={<Layout><FileExplorer></FileExplorer></Layout>} />
           <Route path="FileExplorer2" element={<Layout><FileExplorerChonky></FileExplorerChonky></Layout>} />
           <Route path="Chat" element={<Chat></Chat>} />
+          <Route path="Login" element={<Login></Login>} />
 
         </Routes>
       </Suspense>
