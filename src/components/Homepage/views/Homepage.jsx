@@ -7,12 +7,15 @@ import farfuriiImage from '../assets/img/tablouri.png'
 import tablouImage from '../assets/img/img.y8lJ8Bjod3.jpg'
 
 import teachImage from '../assets/img/Teach.png'
+import Navbar from "../../navbar_and_footer/Navbar";
+import Footer from "../../navbar_and_footer/Footer";
 
 
 export default function Homepage() {
   return (
     <>
       <main>
+        <Navbar transparent></Navbar>
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center"
           style={{
             minHeight: "100vh"
@@ -29,20 +32,19 @@ export default function Homepage() {
               <div className="w-full lg:w-6/12 px-4 text-right">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Your story starts with us.
+                    E nevoie de un sat întreg pentru a crește un copil.
                   </h1>
-                  <p className="mt-4 text-lg text-gray-300">
-                    This is a simple example of a Landing Page you can build
-                    using Tailwind Starter Kit. It features multiple CSS
-                    components based on the Tailwindcss design system.
-                  </p>
-                  <p className="mt-4 text-lg text-gray-300">
+
+                  <p className="mt-4 text-lg text-gray-300" style={{ marginTop: '10px', paddingTop: '20px' }}>
                     <DonateButton></DonateButton>
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
+
+
 
           <div
             className="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden"
@@ -76,13 +78,17 @@ export default function Homepage() {
                     <div className="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 mb-5 shadow-lg rounded-full bg-red-400">
                       <i className="fas fa-award"></i>
                     </div>
-                    <h6 className="text-xl font-semibold">Awarded Agency</h6>
+                    <h6 className="text-xl font-semibold">Sponsor</h6>
+                    <p className="text-gray-600">
+                      Persoana Fizică, Juridică
+                    </p>
                     <p className="mt-2 mb-4 text-gray-600">
-                      Divide details about your product or agency work into parts. A paragraph describing a feature will be enough.
+                      Iti dorești să fii cel care ajută elevii sau școlile din România să-și descopere aripile? Fii la curent cu contextul cu care se confruntă copiii din țară și contribuie activ la susținerea lor. Sharing is Caring.
                     </p>
                   </div>
                 </div>
               </div>
+
 
               <div className="w-full md:w-4/12 px-4 text-center">
                 <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-8 shadow-lg rounded-lg">
@@ -91,10 +97,12 @@ export default function Homepage() {
                       <i className="fas fa-retweet"></i>
                     </div>
                     <h6 className="text-xl font-semibold">
-                      Free Revisions
+                      Profesor
                     </h6>
                     <p className="mt-2 mb-4 text-gray-600">
-                      Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious.
+                      Creează-ți propriul profil și devino influencer în educație! Folosește-te de creativitatea pe care oricum
+                      o folosești mereu cu elevii tăi și dă naștere unei comunități online cu ajutorul căreia să deschizi orizonturile
+                      copiilor din România!
                     </p>
                   </div>
                 </div>
@@ -107,10 +115,11 @@ export default function Homepage() {
                       <i className="fas fa-fingerprint"></i>
                     </div>
                     <h6 className="text-xl font-semibold">
-                      Verified Company
+                      Partener
                     </h6>
                     <p className="mt-2 mb-4 text-gray-600">
-                      Write a few lines about each one. A paragraph describing a feature will be enough. Keep you user engaged!
+                      Susține educație din România prin itermediul firmei din care faci parte sau pe care o deții? Dacă tu consideri că produsele sau serviciile pe care le oferi
+                      pot face o diferență pentru viitorul elevilor, devino partener și fii alături de comunitatea de profesori care pot oferi cele mai bune informații direct de pe teren.
                     </p>
                   </div>
                 </div>
@@ -162,8 +171,6 @@ export default function Homepage() {
                   />
                 </div>
               </div>
-
-
             </div>
 
 
@@ -252,14 +259,6 @@ export default function Homepage() {
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
-
           </div>
         </section>
 
@@ -350,8 +349,11 @@ export default function Homepage() {
               </div>
             </div>
           </div>
-
         </section>
+
+
+
+
 
 
         <section className="pt-20 pb-48">
@@ -670,6 +672,7 @@ export default function Homepage() {
           </div>
         </section>
       </main>
+      <Footer></Footer>
     </>
   );
 }

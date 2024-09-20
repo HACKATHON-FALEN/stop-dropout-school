@@ -20,7 +20,7 @@ export default function FooterSmall(props) {
                   href="https://www.creative-tim.com"
                   className="text-white hover:text-gray-400 text-sm font-semibold py-1"
                 >
-                  Creative Tim
+                  EduTeach
                 </a>
               </div>
             </div>
@@ -31,7 +31,7 @@ export default function FooterSmall(props) {
                     href="https://www.creative-tim.com"
                     className="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3"
                   >
-                    Creative Tim
+                    Pagina Principală
                   </a>
                 </li>
                 <li>
@@ -39,7 +39,7 @@ export default function FooterSmall(props) {
                     href="https://www.creative-tim.com/presentation"
                     className="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3"
                   >
-                    About Us
+
                   </a>
                 </li>
                 <li>
@@ -47,7 +47,7 @@ export default function FooterSmall(props) {
                     href="http://blog.creative-tim.com"
                     className="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3"
                   >
-                    Blog
+                    Donații
                   </a>
                 </li>
                 <li>
@@ -55,7 +55,7 @@ export default function FooterSmall(props) {
                     href="https://github.com/creativetimofficial/argon-design-system/blob/master/LICENSE.md"
                     className="text-white hover:text-gray-400 text-sm font-semibold block py-1 px-3"
                   >
-                    MIT License
+                    Licență
                   </a>
                 </li>
               </ul>
