@@ -25,9 +25,9 @@ const App = () => {
         <Routes>
           {/* Aici bagi paginile faci o componenta noua Layout care contine navbar si footer -> las exemplu */}
 
-          <Route path="*" element={<Layout><Homepage /></Layout>} />
+          <Route path="*" element={<Homepage />} />
           <Route path="Post1" element={<Layout><Post1 /></Layout>} />
-          <Route path="Profile" element={<Layout><Profile /></Layout>} />
+          <Route path="Profile" element={<Profile />} />
           <Route path="FileExplorer" element={<Layout><FileExplorer></FileExplorer></Layout>} />
           <Route path="FileExplorer2" element={<Layout><FileExplorerChonky></FileExplorerChonky></Layout>} />
           <Route path="Chat" element={<Chat></Chat>} />

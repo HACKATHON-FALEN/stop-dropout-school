@@ -15,7 +15,7 @@ const DonateButton = () => {
                 </svg>
             </span>
             {/* Button Text */}
-            <span className="ml-10">Donate Now</span>
+            <span className="ml-10">Contribuie</span>
         </button>
     );
 };
