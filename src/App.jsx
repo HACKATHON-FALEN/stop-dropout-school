@@ -9,6 +9,7 @@ import Chat from "./components/Chat/Chat";
 import Login from "./components/Login/views/Login";
 import Post1 from "./components/Posts/Post1/post1";
 import Vouchers from "./components/Vouchers";
+import ProfileDirector from "./components/ProfileDirector/views/Profile";
 
 const Fallback = (
   <div className="loader-container">
@@ -47,6 +48,14 @@ const App = () => {
             element={
               <Layout>
                 <Profile />
+              </Layout>
+            }
+          />
+          <Route
+            path="ProfileDirector"
+            element={
+              <Layout>
+                <ProfileDirector />
               </Layout>
             }
           />

@@ -14,7 +14,6 @@ import JEGIMage from '../../mock-files/Pictures/jeg.png'; // Adjust this path to
 // Set Chonky's default icon component
 setChonkyDefaults({ iconComponent: ChonkyIconFA });
 
-
 // Mock folder and file structure
 const mockFiles = [
     {
@@ -97,7 +96,7 @@ const FileExplorerChonky = () => {
     return (
         <div>
             {/* File Explorer */}
-            <div style={{ height: '500px', marginTop: '100px', paddingTop: '50px' }}>
+            <div style={{ height: '700px', width: '1000px' }}> {/* Adjust height for more space */}
                 <FullFileBrowser
                     files={currentFiles}
                     folderChain={folderChain}
@@ -110,8 +109,14 @@ const FileExplorerChonky = () => {
             <Dialog
                 open={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
-                maxWidth="md"
+                maxWidth={false} // Disable maxWidth for a full-width modal
                 fullWidth={true}
+                PaperProps={{
+                    style: {
+                        width: '90%',  // Increase the width of the modal
+                        height: '90vh', // Increase the height of the modal
+                    },
+                }}
             >
                 <DialogTitle>{selectedFile ? selectedFile.name : 'File Preview'}</DialogTitle>
                 <DialogContent
