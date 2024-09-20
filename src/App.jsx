@@ -8,7 +8,7 @@ import FileExplorerChonky from "./components/FileExplorer/FileExplorerChonky";
 import Chat from "./components/Chat/Chat";
 import Login from "./components/Login/views/Login";
 import Post1 from "./components/Posts/Post1/post1";
-
+import Vouchers from "./components/Vouchers";
 
 const Fallback = (
   <div className="loader-container">
@@ -26,15 +26,57 @@ const App = () => {
         <Routes>
           {/* Aici bagi paginile faci o componenta noua Layout care contine navbar si footer -> las exemplu */}
 
-          <Route path="*" element={<Homepage />} />
-          <Route path="Post1" element={<Layout><Post1 /></Layout>} />
-          <Route path="Profile" element={<Profile />} />
-          <Route path="FileExplorer" element={<Layout><FileExplorer></FileExplorer></Layout>} />
-          <Route path="FileExplorer2" element={<Layout><FileExplorerChonky></FileExplorerChonky></Layout>} />
+          <Route
+            path="*"
+            element={
+              <Layout>
+                <Homepage />
+              </Layout>
+            }
+          />
+          <Route
+            path="Post1"
+            element={
+              <Layout>
+                <Post1 />
+              </Layout>
+            }
+          />
+          <Route
+            path="Profile"
+            element={
+              <Layout>
+                <Profile />
+              </Layout>
+            }
+          />
+          <Route
+            path="FileExplorer"
+            element={
+              <Layout>
+                <FileExplorer></FileExplorer>
+              </Layout>
+            }
+          />
+          <Route
+            path="FileExplorer2"
+            element={
+              <Layout>
+                <FileExplorerChonky></FileExplorerChonky>
+              </Layout>
+            }
+          />
           <Route path="Chat" element={<Chat></Chat>} />
           <Route path="Login" element={<Login></Login>} />
           <Route path="/feed" element={<Feed />} />
-
+          <Route
+            path="Vouchers"
+            element={
+              <Layout>
+                <Vouchers />
+              </Layout>
+            }
+          />
         </Routes>
       </Suspense>
     </Fragment>
