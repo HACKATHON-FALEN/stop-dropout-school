@@ -16,6 +16,7 @@ const Fallback = (
   </div>
 );
 
+const Feed = lazy(() => import("./components/Feed/views/Feed"));
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
           <Route path="FileExplorer2" element={<Layout><FileExplorerChonky></FileExplorerChonky></Layout>} />
           <Route path="Chat" element={<Chat></Chat>} />
           <Route path="Login" element={<Login></Login>} />
+          <Route path="/feed" element={<Feed />} />
 
         </Routes>
       </Suspense>
