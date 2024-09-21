@@ -77,7 +77,7 @@ export default function Navbar(props) {
                 }
                 href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/landing"
               >
-                Donează
+                Descoperă
               </a>
               <a
                 className={
@@ -149,7 +149,7 @@ export default function Navbar(props) {
                 type="button"
                 style={{ transition: "all .15s ease" }}
               >
-                <i className="fas fa-arrow-alt-circle-down"></i> Donează
+                <i className="fas fa-arrow-alt-circle-down"></i> Contribuie
               </button>
             </li>
           </ul>
