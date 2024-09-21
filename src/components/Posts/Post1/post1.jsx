@@ -173,9 +173,7 @@ const Post1 = () => {
                                             </h5>
                                         </a>
                                         <p className="mb-3 font-normal text-gray-700">
-                                            A venit timpul să vă prezint și micii eroi
-                                            pentru care sunt "Doamna". Clasa noastră
-                                            este compusă din 6 elevi...
+                                            A venit timpul să vă spun povestea copiilor care fac parte din marea noastră familie. În clasă avem 8 elevi curajoși...
                                         </p>
                                         <a
                                             href="/Post1"
@@ -201,13 +199,11 @@ const Post1 = () => {
                                     <div className="p-5">
                                         <a>
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                                                Micii antreprenori
+                                                Eroii satului
                                             </h5>
                                         </a>
                                         <p className="mb-3 font-normal text-gray-700">
-                                            A venit timpul să vă prezint și micii eroi
-                                            pentru care sunt "Doamna". Clasa noastră
-                                            este compusă din 6 elevi...
+                                            În fiecare zi am ocazia să lucrez cu 10 elevi extraordinari, care își doresc să schimbe lumea prin educație. Ei sunt mici, dar ambițioși...
                                         </p>
                                         <a
                                             href="/Post1"
@@ -233,7 +229,7 @@ const Post1 = () => {
                                     <div className="p-5">
                                         <a>
                                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
-                                                Micii antreprenori
+                                                Micii artiști
                                             </h5>
                                         </a>
                                         <p className="mb-3 font-normal text-gray-700">
