@@ -117,8 +117,7 @@ export default function Homepage() {
                       Partener
                     </h6>
                     <p className="mt-2 mb-4 text-gray-600">
-                      Susține educație din România prin itermediul firmei din care faci parte sau pe care o deții? Dacă tu consideri că produsele sau serviciile pe care le oferi
-                      pot face o diferență pentru viitorul elevilor, devino partener și fii alături de comunitatea de profesori care pot oferi cele mai bune informații direct de pe teren.
+                      Susține educația din România prin intermediul companiei tale! Dacă produsele sau serviciile tale pot influența pozitiv viitorul elevilor, devino partener și alătură-te comunității de profesori care oferă cele mai bune soluții direct din practică.
                     </p>
                   </div>
                 </div>
@@ -143,21 +142,16 @@ export default function Homepage() {
                   Ajută copiii defavorizați să își urmeze visul
                 </h3>
                 <p className="text-lg font-light leading-relaxed mt-4 mb-4 text-gray-700">
-                  Don't let your uses guess by attaching tooltips and popoves
-                  to any element. Just make sure you enable them first via
-                  JavaScript.
+                  Prin intermediul platorfmei, profesorii isi pot transforma clasa de elevi in niste mici antreprenori ce isi indeplinesc visurile prin munca si persevernta
                 </p>
                 <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-gray-700">
-                  The kit comes with three pre-built pages to help you get
-                  started faster. You can change the text and images and
-                  you're good to go. Just make sure you enable them first via
-                  JavaScript.
+                  Pentru realizarea produselor elevii au nevoie de resurse, pentru care sponsorii pot contribui cu orice suma dorita, ulterior produsele rezultate pot iesi la licitatie.
                 </p>
                 <a
                   href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/presentation"
                   className="font-bold text-gray-800 mt-8"
                 >
-                  Check Tailwind Starter Kit!
+                  Află mai multe!
                 </a>
               </div>
 
@@ -210,7 +204,7 @@ export default function Homepage() {
                       <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
                         <i className="fas fa-heart"></i>
                       </span>
-                      <h3 className="text-xl font-semibold ml-4">Donate</h3>
+                      <h3 className="text-xl font-semibold ml-4">Donații transparente</h3>
                     </div>
                     <p className="text-gray-600">
                       Help us rewrite the stories of at-risk children and families. Get involved!
