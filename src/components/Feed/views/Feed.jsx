@@ -32,10 +32,10 @@ const FeedPage = () => {
       type: 'postare',
     },
     {
-      id: 2,
+      id: 'Post1',
       sector: 'Județul Iași',
-      title: 'Materiale Creative pentru Copii',
-      author: 'Dr. Maria',
+      title: 'Micii Antrepenori',
+      author: 'Andra Maria Nafornita',
       description: 'Donația ta ne va ajuta să achiziționăm materiale didactice esențiale pentru copii...',
       raised: 3200,
       goal: 4120,
@@ -80,7 +80,7 @@ const FeedPage = () => {
       type: 'licitatie',
     },
     {
-      id: 6,
+      id: 'auction',
       sector: 'Județul Sibiu',
       title: 'Licitație pentru Desene de Copii',
       author: 'Talentul Copiilor',
@@ -101,7 +101,7 @@ const FeedPage = () => {
       goal: 10000,
       image: companyImage,
       date: '2023-10-01',
-      type: 'companie', // New post of type company
+      type: 'companie',
     },
   ]);
 
@@ -164,28 +164,26 @@ const FeedPage = () => {
           </select>
         </div>
 
+
         <div className="flex justify-center mb-6 space-x-2">
           <button
             onClick={() => setSelectedCategory('Postari')}
-            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${
-              selectedCategory === 'Postari' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
-            } transition duration-300`}
+            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${selectedCategory === 'Postari' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
+              } transition duration-300`}
           >
             Postari
           </button>
           <button
             onClick={() => setSelectedCategory('Licitatii')}
-            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${
-              selectedCategory === 'Licitatii' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
-            } transition duration-300`}
+            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${selectedCategory === 'Licitatii' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
+              } transition duration-300`}
           >
             Licitatii
           </button>
           <button
             onClick={() => setSelectedCategory('Companii')}
-            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${
-              selectedCategory === 'Companii' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
-            } transition duration-300`}
+            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${selectedCategory === 'Companii' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
+              } transition duration-300`}
           >
             Companii
           </button>
@@ -200,12 +198,16 @@ const FeedPage = () => {
                 className="w-full h-48 object-cover mb-4 rounded shadow-2xl"
               />
               <div className="text-xs text-olive-700 font-medium">{post.sector}</div>
-              <h2 className="text-lg font-semibold text-gray-800 mt-2">{post.title}</h2>
+              <h2 className="text-lg font-semibold text-gray-800 mt-2">
+                <a href={`/${post.id}`} className="text-orange-600 hover:underline">
+                  {post.title}
+                </a>
+              </h2>
               <p className="text-sm text-gray-500">de {post.author}</p>
               <p className="text-xs text-gray-400">{formatDate(post.date)}</p>
               <p className="mt-2 text-gray-600">
                 {post.description}{' '}
-                <a href="#" className="text-orange-600 hover:underline">Citește mai mult</a>
+                <a href={`/posts/${post.id}`} className="text-orange-600 hover:underline">Citește mai mult</a>
               </p>
               <div className="mt-4">
                 <div className="text-sm text-gray-500 mb-1">
