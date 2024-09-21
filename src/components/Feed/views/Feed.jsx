@@ -6,8 +6,9 @@ import image2 from './image2.jpg';
 import image3 from './image3.jpg';
 import image4 from './image4.jpg';
 import image5 from './image5.jpg';
-import image6 from './image6.jpg'; // Asigură-te că ai o imagine pentru noua licitație
-import image7 from './image7.jpg'; // Asigură-te că ai o imagine pentru noua licitație
+import image6 from './image6.jpg';
+import image7 from './image7.jpg';
+import companyImage from './image8.jpg';
 
 const FeedPage = () => {
   const [donationAmount, setDonationAmount] = useState(300);
@@ -28,7 +29,7 @@ const FeedPage = () => {
       goal: 1700,
       image: image2,
       date: '2023-09-12',
-      type: 'postare', // Nou câmp
+      type: 'postare',
     },
     {
       id: 2,
@@ -76,7 +77,7 @@ const FeedPage = () => {
       goal: 5000,
       image: image6,
       date: '2023-09-25',
-      type: 'licitatie', // Nou câmp
+      type: 'licitatie',
     },
     {
       id: 6,
@@ -88,14 +89,35 @@ const FeedPage = () => {
       goal: 3000,
       image: image7,
       date: '2023-09-28',
-      type: 'licitatie', // Nou câmp
+      type: 'licitatie',
+    },
+    {
+      id: 7,
+      sector: 'Județul Brașov',
+      title: 'Sprijin pentru Inițiative Verzi',
+      author: 'Compania Verde',
+      description: 'Ajută-ne să dezvoltăm inițiative verzi și să protejăm mediul înconjurător.',
+      raised: 5000,
+      goal: 10000,
+      image: companyImage,
+      date: '2023-10-01',
+      type: 'companie', // New post of type company
     },
   ]);
 
   const [sortOption, setSortOption] = useState('Cele mai recente');
   const [selectedCategory, setSelectedCategory] = useState('Postari');
 
-  const filteredPosts = posts.filter(post => post.type === (selectedCategory === 'Postari' ? 'postare' : 'licitatie'));
+  const filteredPosts = posts.filter(post => {
+    if (selectedCategory === 'Postari') {
+      return post.type === 'postare';
+    } else if (selectedCategory === 'Licitatii') {
+      return post.type === 'licitatie';
+    } else if (selectedCategory === 'Companii') {
+      return post.type === 'companie';
+    }
+    return true;
+  });
 
   const sortedPosts = [...filteredPosts].sort((a, b) => {
     if (sortOption === 'Cele mai recente') {
@@ -142,18 +164,30 @@ const FeedPage = () => {
           </select>
         </div>
 
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-6 space-x-2">
           <button
             onClick={() => setSelectedCategory('Postari')}
-            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${selectedCategory === 'Postari' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'} transition duration-300`}
+            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${
+              selectedCategory === 'Postari' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
+            } transition duration-300`}
           >
             Postari
           </button>
           <button
             onClick={() => setSelectedCategory('Licitatii')}
-            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${selectedCategory === 'Licitatii' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'} transition duration-300`}
+            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${
+              selectedCategory === 'Licitatii' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
+            } transition duration-300`}
           >
             Licitatii
+          </button>
+          <button
+            onClick={() => setSelectedCategory('Companii')}
+            className={`px-4 py-2 border border-orange-500 text-sm font-medium ${
+              selectedCategory === 'Companii' ? 'bg-orange-500 text-white' : 'text-orange-500 bg-white'
+            } transition duration-300`}
+          >
+            Companii
           </button>
         </div>
 
