@@ -7,6 +7,7 @@ import postareCopii from "../assets/img/poza_principala_postare.jpg";
 import { HiOutlineBadgeCheck } from "react-icons/hi";
 import { FaEye, FaEyeSlash, FaCopy, FaGift } from "react-icons/fa";
 import { BsPrinter } from "react-icons/bs";
+import receipt from "./sal.pdf";
 
 // import { FaCopy } from "react-icons/fa";
 import { Tooltip } from "@mui/material"; // Material UI Tooltip
@@ -51,6 +52,16 @@ export default function Profile() {
       ...prev,
       [voucherId]: !prev[voucherId],
     }));
+  };
+
+  const handleDownload = (voucherId) => {
+    const fileName = `voucher-emag.pdf`; // Customize file name based on voucher ID
+
+    // Simulate file download by creating a link to the static file
+    const link = document.createElement("a");
+    link.href = receipt; // Replace with your file path
+    link.download = fileName;
+    link.click();
   };
 
   const VoucherCard = () => {
@@ -140,7 +151,10 @@ export default function Profile() {
 
               {/* </div> */}
               <Tooltip title="Emitere Rețetă" arrow>
-                <button className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition duration-300">
+                <button
+                  onClick={() => handleDownload(voucher.id)}
+                  className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition duration-300"
+                >
                   <BsPrinter size={30} />
                 </button>
               </Tooltip>
