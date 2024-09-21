@@ -103,7 +103,7 @@ const FeedPage = () => {
       <img
         src={post.image}
         alt={post.title}
-        className="w-full h-48 object-cover mb-4 rounded"
+        className="w-full h-48 object-cover mb-4 rounded shadow-2xl"
       />
 
       <div className="text-xs text-olive-700 font-medium">{post.sector}</div>
