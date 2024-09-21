@@ -47,7 +47,7 @@ const OrnamentsAuction = () => {
                         {notification}
                     </div>
                 )}
-                
+
                 {/* Informații de preț și buton "Buy Now" */}
                 <div className="bg-gray-50 p-4 rounded-lg mb-4 shadow-sm">
                     <h2 className="text-lg font-semibold text-gray-700">Buy Now for</h2>
@@ -60,6 +60,8 @@ const OrnamentsAuction = () => {
                     </button>
                 </div>
 
+<>
+</>
                 {/* Numărul de ornamente vândute */}
                 <div className="bg-gray-50 p-4 rounded-lg mb-4 shadow-sm">
                     <p className="text-xl font-semibold text-gray-700">3 Ornamente vândute!</p>
