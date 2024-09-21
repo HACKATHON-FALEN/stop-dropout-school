@@ -94,9 +94,9 @@ const FeedPage = () => {
     {
       id: 7,
       sector: 'Județul Brașov',
-      title: 'Sprijin pentru Inițiative Verzi',
+      title: 'Sprijin pentru Scoli',
       author: 'Compania Verde',
-      description: 'Ajută-ne să dezvoltăm inițiative verzi și să protejăm mediul înconjurător.',
+      description: 'Ajută-ne să dezvoltăm spatiul scolar.',
       raised: 5000,
       goal: 10000,
       image: companyImage,
