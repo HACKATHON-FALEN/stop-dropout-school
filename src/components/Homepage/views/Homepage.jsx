@@ -203,12 +203,12 @@ export default function Homepage() {
                   <div className="mb-8">
                     <div className="flex items-center mb-4">
                       <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
-                        <i className="fas fa-heart"></i>
+                        <i className=""></i>
                       </span>
                       <h3 className="text-xl font-semibold ml-4">Creează</h3>
                     </div>
                     <p className="text-gray-600">
-                      Help us rewrite the stories of at-risk children and families. Get involved!
+                      Ajută-ne să rescriem poveștile copiilor și familiilor defavorizate. Fii parte din schimbare, contribuind cu resurse educaționale esențiale pentru o viață mai bună!
                     </p>
                   </div>
 
@@ -216,12 +216,12 @@ export default function Homepage() {
                   <div className="mb-8">
                     <div className="flex items-center mb-4">
                       <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
-                        <i className="fas fa-clock"></i>
+                        <i className=""></i>
                       </span>
                       <h3 className="text-xl font-semibold ml-4">Contribuie</h3>
                     </div>
                     <p className="text-gray-600">
-                      Volunteers are valuable members of the family. You too can donate your time!
+                      Voluntarii sunt inima acestui proiect. Alătură-te comunității noastre și donează din timpul și energia ta pentru a sprijini dezvoltarea copiilor!s
                     </p>
                   </div>
 
@@ -229,12 +229,12 @@ export default function Homepage() {
                   <div className="mb-8">
                     <div className="flex items-center mb-4">
                       <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
-                        <i className="fas fa-birthday-cake"></i>
+                        <i className=""></i>
                       </span>
                       <h3 className="text-xl font-semibold ml-4">Construiește</h3>
                     </div>
                     <p className="text-gray-600">
-                      Encourage friends and family to support us through the Donate Your Birthday campaign.
+                      Implică-ți compania în susținerea școlilor prin donații și licitații pentru a oferi copiilor resurse educaționale esențiale.
                     </p>
                   </div>
 
@@ -242,12 +242,12 @@ export default function Homepage() {
                   <div>
                     <div className="flex items-center mb-4">
                       <span className="bg-pink-200 text-pink-500 p-3 rounded-full">
-                        <i className="fas fa-folder"></i>
+                        <i className=""></i>
                       </span>
                       <h3 className="text-xl font-semibold ml-4">Reușim împreună</h3>
                     </div>
                     <p className="text-gray-600">
-                      Part of your income tax paid to the government can support children. Find out how you can help!
+                      Descoperă cum poți redirecționa aceste fonduri pentru a susține educația copiilor care au nevoie cel mai mult.
                     </p>
                   </div>
                 </div>
@@ -284,13 +284,15 @@ export default function Homepage() {
                   <div className="text-pink-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-pink-300">
                     <i className="fas fa-rocket text-xl"></i>
                   </div>
-                  <h3 className="text-3xl font-semibold">
-                    A growing company
+                  <h3 className="text-3xl font-semibold ">
+                    Fii partener în educație
                   </h3>
                   <p className="mt-4 text-lg leading-relaxed text-gray-600">
-                    The extension comes with three pre-built pages to help you
-                    get started faster. You can change the text and images and
-                    you're good to go.
+                    Alătură-te ca sponsor și investește în viitorul copiilor.
+                    Susține dezvoltarea școlilor și oferă resurse esențiale pentru o educație de calitate.
+                    Implicarea ta poate transforma vieți și comunități.
+
+
                   </p>
                   <ul className="list-none mt-6">
                     <li className="py-2">
@@ -302,7 +304,7 @@ export default function Homepage() {
                         </div>
                         <div>
                           <h4 className="text-gray-600">
-                            Carefully crafted components
+                            Modernizarea școlilor
                           </h4>
                         </div>
                       </div>
@@ -315,7 +317,8 @@ export default function Homepage() {
                           </span>
                         </div>
                         <div>
-                          <h4 className="text-gray-600">Amazing page examples</h4>
+                          <h4 className="text-gray-600">Proiecte comunitare
+                          </h4>
                         </div>
                       </div>
                     </li>
@@ -327,7 +330,7 @@ export default function Homepage() {
                           </span>
                         </div>
                         <div>
-                          <h4 className="text-gray-600">Dynamic components</h4>
+                          <h4 className="text-gray-600">Parteneriate pentru educație</h4>
                         </div>
                       </div>
                     </li>
@@ -341,6 +344,8 @@ export default function Homepage() {
                   src="https://www.europafm.ro/wp-content/uploads/2015/09/Scoala-Satulung-3.jpg"
                 />
               </div>
+              <div className="w-full h-32"></div> {/* This adds extra white space */}
+
             </div>
           </div>
         </section>

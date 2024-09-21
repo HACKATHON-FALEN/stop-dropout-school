@@ -237,7 +237,7 @@ export default function Profile() {
                         type="button"
                         style={{ transition: "all .15s ease" }}
                       >
-                        Connect
+                        Urmărește
                       </button>
                     </div>
                   </div>
@@ -295,7 +295,7 @@ export default function Profile() {
                             }`}
                           onClick={() => setActiveTab("postari")}
                         >
-                          Postari
+                          Postări
                         </button>
 
 
