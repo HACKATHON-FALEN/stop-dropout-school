@@ -134,15 +134,14 @@ const OrnamentsAuction = () => {
                 </div>
 
                 {/* Button to place the offer */}
-                <a href="/vouchers">
-                  <button
-                    onClick={placeOffer}
-                    className="bg-orange-500 text-white px-4 py-2 w-full rounded-lg hover:bg-orange-600 transition duration-300 mb-4"
-                  >
-                    Plasați oferta
-                  </button>
-                </a>
-
+                {/* <a href="/vouchers"> */}
+                <button
+                  onClick={placeOffer}
+                  className="bg-orange-500 text-white px-4 py-2 w-full rounded-lg hover:bg-orange-600 transition duration-300 mb-4"
+                >
+                  Plasați oferta
+                </button>
+                {/* </a> */}
 
                 {/* Button to close the modal */}
                 <button
