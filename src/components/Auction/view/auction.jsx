@@ -3,7 +3,7 @@ import AuctionImage from './auction.jpg'; // Importă imaginea locală
 
 const OrnamentsAuction = () => {
     // Stare pentru prețuri și detalii
-    const [price, setPrice] = useState(86); // prețul curent "Buy Now"
+    const [price, setPrice] = useState(86); // prețul curent "Cumpără acum"
     const [lastSale, setLastSale] = useState(95); // ultima vânzare
     const [sold, setSold] = useState(277); // numărul de ornamente vândute
     const [isModalOpen, setIsModalOpen] = useState(false); // Stare pentru modal
@@ -47,10 +47,10 @@ const OrnamentsAuction = () => {
                         {notification}
                     </div>
                 )}
-
-                {/* Informații de preț și buton "Buy Now" */}
+                
+                {/* Informații de preț și buton "Cumpără acum" */}
                 <div className="bg-gray-50 p-4 rounded-lg mb-4 shadow-sm">
-                    <h2 className="text-lg font-semibold text-gray-700">Buy Now for</h2>
+                    <h2 className="text-lg font-semibold text-gray-700">Cumpără acum pentru</h2>
                     <p className="text-3xl font-bold text-orange-500 mb-2">{price} LEI</p>
                     <button
                         className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition duration-300"
@@ -60,11 +60,9 @@ const OrnamentsAuction = () => {
                     </button>
                 </div>
 
-<>
-</>
                 {/* Numărul de ornamente vândute */}
                 <div className="bg-gray-50 p-4 rounded-lg mb-4 shadow-sm">
-                    <p className="text-xl font-semibold text-gray-700">3 Ornamente vândute!</p>
+                    <p className="text-xl font-semibold text-gray-700">{sold} Ornamente vândute!</p>
                 </div>
 
                 {/* Informații despre ultima vânzare */}
@@ -72,8 +70,6 @@ const OrnamentsAuction = () => {
                     <h2 className="text-lg font-semibold text-gray-700">Ultima vânzare</h2>
                     <p className="text-2xl font-bold text-green-500 mb-2">{lastSale} LEI</p>
                 </div>
-
-
             </div>
 
             {/* Modal pentru plasarea ofertei */}
@@ -84,7 +80,6 @@ const OrnamentsAuction = () => {
 
                         {/* Input pentru preț incrementabil */}
                         <div className="flex items-center justify-between mb-4">
-                            
                             <button
                                 onClick={decrementPrice}
                                 className="px-4 py-2 bg-gray-300 rounded-lg"
@@ -99,7 +94,7 @@ const OrnamentsAuction = () => {
                                 onChange={(e) => setOfferPrice(Number(e.target.value))}
                                 className="p-2 border border-gray-300 w-20 focus:outline-none focus:ring-1 focus:ring-olive-500 text-left"
                             />
-                        <span className="text-gray-600">RON</span>
+                            <span className="text-gray-600">RON</span>
 
                             <button
                                 onClick={incrementPrice}
@@ -107,7 +102,6 @@ const OrnamentsAuction = () => {
                             >
                                 +
                             </button>
-                            
                         </div>
 
                         {/* Buton pentru plasarea ofertei */}
