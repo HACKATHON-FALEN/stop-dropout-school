@@ -31,9 +31,7 @@ const App = () => {
           <Route
             path="*"
             element={
-              <Layout>
-                <Homepage />
-              </Layout>
+              <Homepage />
             }
           />
           <Route
@@ -47,9 +45,7 @@ const App = () => {
           <Route
             path="Profile"
             element={
-              <Layout>
-                <Profile />
-              </Layout>
+              <Profile />
             }
           />
           <Route

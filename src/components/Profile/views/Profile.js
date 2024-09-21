@@ -19,6 +19,8 @@ import dedeman from "../../../assets/vouchers/dedeman.jpg";
 import image3 from './image3.jpg';
 import image4 from './image4.jpg';
 import FeedComponent from "./FeedComponent";
+import Navbar from "../../navbar_and_footer/Navbar";
+import Footer from "../../navbar_and_footer/Footer";
 
 const vouchers = [
   { id: 1, partnerLogo: altex, name: "Altex", amount: "500", code: "ALT500" },
@@ -67,108 +69,113 @@ export default function Profile() {
       }));
     };
 
-  // Format the date
-  const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString(undefined, options);
-  };
+    // Format the date
+    const formatDate = (dateString) => {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(dateString).toLocaleDateString(undefined, options);
+    };
 
 
     return (
-      <div className="space-y-8 flex flex-col align-middle justify-center items-center">
-        {/* Vertical spacing for list layout */}
-        {vouchers.map((voucher) => (
-          <div
-            key={voucher.id}
-            className="bg-white border border-gray-200 rounded-lg shadow-2xl w-1/2 p-5 flex flex-col items-center space-y-5"
-          >
-            {/* Partner logo */}
-            <img
-              src={voucher.partnerLogo}
-              alt={`Partner ${voucher.id}`}
-              className="w-24 h-24 object-contain mb-4" // Ensures the logo fits nicely
-            />
+      <>
+        <div className="space-y-8 flex flex-col align-middle justify-center items-center">
+          {/* Vertical spacing for list layout */}
+          {vouchers.map((voucher) => (
+            <div
+              key={voucher.id}
+              className="bg-white border border-gray-200 rounded-lg shadow-2xl w-1/2 p-5 flex flex-col items-center space-y-5"
+            >
+              {/* Partner logo */}
+              <img
+                src={voucher.partnerLogo}
+                alt={`Partner ${voucher.id}`}
+                className="w-24 h-24 object-contain mb-4" // Ensures the logo fits nicely
+              />
 
-            {/* Voucher Details */}
-            <h3 className="text-2xl font-bold mb-2">{voucher.name}</h3>
-            <hr className="border-t-2 border-gray-300 w-3/4 my-4" />
+              {/* Voucher Details */}
+              <h3 className="text-2xl font-bold mb-2">{voucher.name}</h3>
+              <hr className="border-t-2 border-gray-300 w-3/4 my-4" />
 
-            {/* Voucher Value with Gift Icon */}
-            <div className="flex items-center justify-center w-full mb-4">
-              <FaGift className="text-gray-600 text-2xl mr-2" />
-              <span className="font-semibold text-xl">
-                {voucher.amount} Lei
-              </span>
-            </div>
+              {/* Voucher Value with Gift Icon */}
+              <div className="flex items-center justify-center w-full mb-4">
+                <FaGift className="text-gray-600 text-2xl mr-2" />
+                <span className="font-semibold text-xl">
+                  {voucher.amount} Lei
+                </span>
+              </div>
 
-            {/* Voucher Code (Hidden/Visible) */}
+              {/* Voucher Code (Hidden/Visible) */}
 
-            {/* Hearts to signify trust */}
+              {/* Hearts to signify trust */}
 
-            <div className="flex items-center justify-between w-3/4 px-4 mb-4">
-              <span className="font-semibold text-xl">
-                {revealedVouchers[voucher.id] ? voucher.code : "*****"}
-              </span>
+              <div className="flex items-center justify-between w-3/4 px-4 mb-4">
+                <span className="font-semibold text-xl">
+                  {revealedVouchers[voucher.id] ? voucher.code : "*****"}
+                </span>
 
-              {/* Reveal and Copy Icons */}
-              <div className="flex items-center space-x-2">
-                {/* Reveal/Hide Button */}
-                <Tooltip
-                  title={
-                    revealedVouchers[voucher.id]
-                      ? "Ascunde codul voucherului"
-                      : "Arată codul voucherului"
-                  }
-                  arrow
-                >
-                  <button
-                    onClick={() => toggleRevealVoucher(voucher.id)}
-                    className="text-gray-600 hover:text-gray-800"
+                {/* Reveal and Copy Icons */}
+                <div className="flex items-center space-x-2">
+                  {/* Reveal/Hide Button */}
+                  <Tooltip
+                    title={
+                      revealedVouchers[voucher.id]
+                        ? "Ascunde codul voucherului"
+                        : "Arată codul voucherului"
+                    }
+                    arrow
                   >
-                    {revealedVouchers[voucher.id] ? (
-                      <FaEyeSlash size={25} />
-                    ) : (
-                      <FaEye size={25} />
-                    )}
-                  </button>
-                </Tooltip>
-
-                {/* Copy Icon (Visible only when the voucher is revealed) */}
-                {revealedVouchers[voucher.id] && (
-                  <Tooltip title="Copiază codul" arrow>
-                    <button className="text-gray-600 hover:text-gray-800">
-                      <FaCopy size={25} />
+                    <button
+                      onClick={() => toggleRevealVoucher(voucher.id)}
+                      className="text-gray-600 hover:text-gray-800"
+                    >
+                      {revealedVouchers[voucher.id] ? (
+                        <FaEyeSlash size={25} />
+                      ) : (
+                        <FaEye size={25} />
+                      )}
                     </button>
                   </Tooltip>
-                )}
+
+                  {/* Copy Icon (Visible only when the voucher is revealed) */}
+                  {revealedVouchers[voucher.id] && (
+                    <Tooltip title="Copiază codul" arrow>
+                      <button className="text-gray-600 hover:text-gray-800">
+                        <FaCopy size={25} />
+                      </button>
+                    </Tooltip>
+                  )}
+                </div>
+              </div>
+              <hr className="border-t-2 border-gray-300 w-3/4 my-4" />
+
+              <div className="flex justify-around align-middle items-center w-1/2">
+                {/* <div className="flex space-x-2 mb-4"> */}
+                <Tooltip title="Fonduri încredințate profesorului" arrow>
+                  <FaHeart className="text-red-500" fontSize="large" />
+                </Tooltip>
+
+                {/* </div> */}
+                <Tooltip title="Emitere Rețetă" arrow>
+                  <button className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition duration-300">
+                    <BsPrinter size={30} />
+                  </button>
+                </Tooltip>
+                <Tooltip title="Fonduri de încredere" arrow>
+                  <FaHeart className="text-red-500" fontSize="large" />
+                </Tooltip>
               </div>
             </div>
-            <hr className="border-t-2 border-gray-300 w-3/4 my-4" />
+          ))}
+        </div>
+        <Footer></Footer>
+      </>
 
-            <div className="flex justify-around align-middle items-center w-1/2">
-              {/* <div className="flex space-x-2 mb-4"> */}
-              <Tooltip title="Fonduri încredințate profesorului" arrow>
-                <FaHeart className="text-red-500" fontSize="large" />
-              </Tooltip>
-
-              {/* </div> */}
-              <Tooltip title="Emitere Rețetă" arrow>
-                <button className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition duration-300">
-                  <BsPrinter size={30} />
-                </button>
-              </Tooltip>
-              <Tooltip title="Fonduri de încredere" arrow>
-                <FaHeart className="text-red-500" fontSize="large" />
-              </Tooltip>
-            </div>
-          </div>
-        ))}
-      </div>
     );
   };
 
   return (
     <>
+      <Navbar transparent></Navbar>
       <main className="profile-page">
         <section className="relative block" style={{ height: "500px" }}>
           <div
@@ -273,8 +280,8 @@ export default function Profile() {
                       <div className="flex justify-center mb-8 space-x-8">
                         <button
                           className={`text-lg font-bold ${activeTab === "about"
-                              ? "text-blue-600 border-b-2 border-blue-600"
-                              : "text-gray-600"
+                            ? "text-blue-600 border-b-2 border-blue-600"
+                            : "text-gray-600"
                             }`}
                           onClick={() => setActiveTab("about")}
                         >
@@ -294,8 +301,8 @@ export default function Profile() {
 
                         <button
                           className={`text-lg font-bold ${activeTab === "vouchers"
-                              ? "text-blue-600 border-b-2 border-blue-600"
-                              : "text-gray-600"
+                            ? "text-blue-600 border-b-2 border-blue-600"
+                            : "text-gray-600"
                             }`}
                           onClick={() => setActiveTab("vouchers")}
                         >
@@ -395,7 +402,7 @@ export default function Profile() {
                         <div className="flex flex-wrap justify-center">
                           <div className="w-full lg:w-9/12 px-4">
                             {/* Content for "Postari" tab */}
-                            
+
                             <FeedComponent />
 
                           </div>
