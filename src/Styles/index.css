@@ -21,3 +21,29 @@ body {
 .wave-animation {
   animation: wave 1s infinite;
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards; /* 1-second fade-in */
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards; /* 1-second fade-out */
+}
