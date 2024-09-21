@@ -69,7 +69,7 @@ const Chat = ({ isOpen, toggleChat, editorText }) => {
                     sendMessage("Bot", botMessage);
                 } catch (error) {
                     console.error("Error communicating with OpenAI:", error);
-                    sendMessage("Bot", "da ba cacatule.");
+                    sendMessage("Bot", "Buna ziua! Bineinteles, discutăm.");
                 }
             }
         }
@@ -106,7 +106,7 @@ const Chat = ({ isOpen, toggleChat, editorText }) => {
                                 {msg.sender !== "User" && (
                                     <img
                                         className="w-8 h-8 rounded-full"
-                                        src="https://cdn-icons-png.freepik.com/512/180/180678.png"
+                                        src="http://localhost:3000/static/media/profile_teacher.ae3327d91f6c7c282c4e.jpg"
                                         alt="Bot image"
                                     />
                                 )}
@@ -117,7 +117,7 @@ const Chat = ({ isOpen, toggleChat, editorText }) => {
                                         } border border-gray-200`}
                                 >
                                     <span className="text-sm font-semibold">
-                                        {msg.sender === "User" ? "You" : "Jeg"}
+                                        {msg.sender === "User" ? "Viacons" : "Lavinia Elisei"}
                                     </span>
                                     <p className="text-sm">{msg.content}</p>
                                     <span className="text-xs text-gray-500">{msg.timestamp}</span>
@@ -125,7 +125,7 @@ const Chat = ({ isOpen, toggleChat, editorText }) => {
                                 {msg.sender === "User" && (
                                     <img
                                         className="w-8 h-8 rounded-full"
-                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToK_-LT9HmxfBNTsC0A8wfvjtfxKh3GjexbQ&s"
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-dYoKQHLRhVHi0S-AbFB7PI7kd-fH5Ewl2g&s"
                                         alt="User image"
                                     />
                                 )}
