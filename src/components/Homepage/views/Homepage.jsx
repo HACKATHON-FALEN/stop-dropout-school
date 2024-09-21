@@ -15,7 +15,6 @@ export default function Homepage() {
   return (
     <>
       <main>
-        <Navbar transparent></Navbar>
         <div className="relative pt-16 pb-32 flex content-center items-center justify-center"
           style={{
             minHeight: "100vh"
@@ -672,7 +671,6 @@ export default function Homepage() {
           </div>
         </section>
       </main>
-      <Footer></Footer>
     </>
   );
 }
