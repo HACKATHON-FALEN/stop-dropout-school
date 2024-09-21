@@ -77,12 +77,6 @@ export default function Navbar(props) {
                 }
                 href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/landing"
               >
-                <i
-                  className={
-                    (isScrolled ? "text-gray-500" : "lg:text-gray-300 text-gray-500") +
-                    " far fa-file-alt text-lg leading-lg mr-2"
-                  }
-                />{" "}
                 Donează
               </a>
               <a
@@ -94,12 +88,7 @@ export default function Navbar(props) {
                 }
                 href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/landing"
               >
-                <i
-                  className={
-                    (isScrolled ? "text-gray-500" : "lg:text-gray-300 text-gray-500") +
-                    " far fa-file-alt text-lg leading-lg mr-2"
-                  }
-                />{" "}
+                {" "}
               </a>
 
 
@@ -116,12 +105,6 @@ export default function Navbar(props) {
                 }
                 href="#pablo"
               >
-                <i
-                  className={
-                    (isScrolled ? "text-gray-500" : "lg:text-gray-300 text-gray-500") +
-                    " fab fa-facebook text-lg leading-lg "
-                  }
-                />
                 <span className="lg:hidden inline-block ml-2">Share</span>
               </a>
             </li>
@@ -136,12 +119,7 @@ export default function Navbar(props) {
                 }
                 href="#pablo"
               >
-                <i
-                  className={
-                    (isScrolled ? "text-gray-500" : "lg:text-gray-300 text-gray-500") +
-                    " fab fa-twitter text-lg leading-lg "
-                  }
-                />
+
                 <span className="lg:hidden inline-block ml-2">Tweet</span>
               </a>
             </li>
@@ -156,12 +134,6 @@ export default function Navbar(props) {
                 }
                 href="#pablo"
               >
-                <i
-                  className={
-                    (isScrolled ? "text-gray-500" : "lg:text-gray-300 text-gray-500") +
-                    " fab fa-github text-lg leading-lg "
-                  }
-                />
                 <span className="lg:hidden inline-block ml-2">Star</span>
               </a>
             </li>
