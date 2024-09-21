@@ -4,8 +4,8 @@ import gifImage from "./success.gif"; // Import your GIF file
 
 const OrnamentsAuction = () => {
   // State for prices, sale details, and modal
-  const [price, setPrice] = useState(100); // Current "Buy Now" price
-  const [lastSale, setLastSale] = useState(95); // Last sale price
+  const [price, setPrice] = useState(50); // Current "Buy Now" price
+  const [lastSale, setLastSale] = useState(45); // Last sale price
   const [sold, setSold] = useState(277); // Number of ornaments sold
   const [isModalOpen, setIsModalOpen] = useState(false); // State for modal
   const [offerPrice, setOfferPrice] = useState(price); // Input price for the offer
