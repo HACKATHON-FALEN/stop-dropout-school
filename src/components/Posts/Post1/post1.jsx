@@ -15,6 +15,9 @@ import goldTrophy from '../assets/img/gold_trophy.png';  // Trophy images
 import silverTrophy from '../assets/img/silver_trophy.png';
 import copperTrophy from '../assets/img/copper_trophy.png';
 
+// Import the CommentSection component
+import CommentSection from '../../Comment/CommentSection'; // Make sure the path is correct
+
 const Post1 = () => {
     const photos = [photo_1, photo_2, photo_3, photo_4];
 
@@ -59,7 +62,6 @@ const Post1 = () => {
                             <div className="text-center mt-12">
                                 <h1 style={{ fontSize: '50px', fontWeight: 'bold' }}>Micii antreprenori</h1>
                             </div>
-
 
                             <div className="text-center mt-6 p-5">
                                 <div className="text-sm text-gray-500 mb-1 font-bold">
@@ -147,6 +149,9 @@ const Post1 = () => {
                                     </div>
                                 </div>
                             </div>
+
+
+
                             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", padding: "25px", alignItems: "center" }}>
                                 <div className="mt-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow">
                                     <a>
@@ -244,20 +249,22 @@ const Post1 = () => {
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
-
-
+                            <div className="p-5">
+                                <CommentSection />
+                            </div>
                         </div>
                     </div>
                 </section>
+                {/* Add CommentSection component here */}
+
             </main>
 
             {/* CSS for Glitter Animation */}
             <style>{`
                 @keyframes glitter-gold {
                     0% { text-shadow: 0px 0px 10px gold; }
-                     100% { text-shadow: 0px 0px 20px gold; }
+                    100% { text-shadow: 0px 0px 20px gold; }
                 }
                 @keyframes glitter-silver {
                     0% { text-shadow: 0px 0px 10px silver; }
