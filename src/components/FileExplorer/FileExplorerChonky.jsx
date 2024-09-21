@@ -16,7 +16,7 @@ import {
 import pdfjsWorker from "pdfjs-dist/build/pdf.worker.entry";
 
 // Import the local image for thumbnail usage
-import JEGIMage from "../../mock-files/Pictures/jeg.png"; // Adjust this path to the actual image location
+import JEGIMage from "../../mock-files/Pictures/faza1.jpg"; // Adjust this path to the actual image location
 import faza3 from "../../mock-files/Pictures/faza3.jpg"; // Adjust this path to the actual image location
 import faza4 from "../../mock-files/Pictures/faza4.jpg"; // Adjust this path to the actual image location
 import faza1 from "../../mock-files/Pictures/faza1.jpg"; // Adjust this path to the actual image location
@@ -60,7 +60,7 @@ const mockFiles = [
     children: [
       {
         id: "5",
-        name: "jeg.png",
+        name: "faza1.png",
         isDir: false,
         thumbnailUrl: JEGIMage,
       },
