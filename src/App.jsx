@@ -78,7 +78,7 @@ const App = () => {
           <Route path="Chat" element={<Chat></Chat>} />
           <Route path="Login" element={<Login></Login>} />
           <Route path="/feed" element={<Feed />} />
-          <Route
+          <Route  
             path="Vouchers"
             element={
               <Layout>

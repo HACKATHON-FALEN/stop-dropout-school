@@ -5,6 +5,12 @@ import photo_1 from '../assets/img/photo1.jpg';
 import photo_2 from '../assets/img/photo2.jpg';
 import photo_3 from '../assets/img/photo3.jpg';
 import photo_4 from '../assets/img/photo4.jpg';
+
+import photo_related1 from '../assets/img/post_related1.jpg';
+import photo_related2 from '../assets/img/post_related2.jpg';
+import photo_related3 from '../assets/img/post_related3.jpg';
+import photo_related4 from '../assets/img/post_related4.jpg';
+
 import goldTrophy from '../assets/img/gold_trophy.png';  // Trophy images
 import silverTrophy from '../assets/img/silver_trophy.png';
 import copperTrophy from '../assets/img/copper_trophy.png';
@@ -14,7 +20,7 @@ const Post1 = () => {
 
     const [donationAmount, setDonationAmount] = useState(300); // Default donation amount
     const totalGoal = 10000; // Example goal amount in LEI
-    const totalRaised = 7850; // Example raised amount in LEI
+    const totalRaised = 3950; // Example raised amount in LEI
 
     const donations = [
         { name: 'Ana Popescu', amount: 1000, message: 'Vreau să susțin educația copiilor.', rank: 1, trophy: goldTrophy },
@@ -50,12 +56,11 @@ const Post1 = () => {
                 <section className="relative py-16 bg-gray-300">
                     <div className="container mx-auto px-4">
                         <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg">
-                            {/* Title */}
                             <div className="text-center mt-12">
                                 <h1 style={{ fontSize: '50px', fontWeight: 'bold' }}>Micii antreprenori</h1>
                             </div>
 
-                            {/* Progress Bar */}
+
                             <div className="text-center mt-6 p-5">
                                 <div className="text-sm text-gray-500 mb-1 font-bold">
                                     {totalRaised.toLocaleString()} LEI strânși din {totalGoal.toLocaleString()} LEI
@@ -142,6 +147,107 @@ const Post1 = () => {
                                     </div>
                                 </div>
                             </div>
+                            <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between", padding: "25px", alignItems: "center" }}>
+                                <div className="mt-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                                    <a>
+                                        <img
+                                            className="rounded-t-lg"
+                                            src={photo_related1}
+                                            alt=""
+                                            style={{
+                                                width: "100%",
+                                                height: "200px",
+                                                objectFit: "cover",
+                                            }}
+                                        />
+                                    </a>
+                                    <div className="p-5">
+                                        <a>
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                                Micii antreprenori
+                                            </h5>
+                                        </a>
+                                        <p className="mb-3 font-normal text-gray-700">
+                                            A venit timpul să vă prezint și micii eroi
+                                            pentru care sunt "Doamna". Clasa noastră
+                                            este compusă din 6 elevi...
+                                        </p>
+                                        <a
+                                            href="/Post1"
+                                            className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+                                        >
+                                            Citeste mai mult
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="mt-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                                    <a>
+                                        <img
+                                            className="rounded-t-lg"
+                                            src={photo_related2}
+                                            alt=""
+                                            style={{
+                                                width: "100%",
+                                                height: "200px",
+                                                objectFit: "cover",
+                                            }}
+                                        />
+                                    </a>
+                                    <div className="p-5">
+                                        <a>
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                                Micii antreprenori
+                                            </h5>
+                                        </a>
+                                        <p className="mb-3 font-normal text-gray-700">
+                                            A venit timpul să vă prezint și micii eroi
+                                            pentru care sunt "Doamna". Clasa noastră
+                                            este compusă din 6 elevi...
+                                        </p>
+                                        <a
+                                            href="/Post1"
+                                            className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+                                        >
+                                            Citeste mai mult
+                                        </a>
+                                    </div>
+                                </div>
+                                <div className="mt-5 max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                                    <a>
+                                        <img
+                                            className="rounded-t-lg"
+                                            src={photo_related3}
+                                            alt=""
+                                            style={{
+                                                width: "100%",
+                                                height: "200px",
+                                                objectFit: "cover",
+                                            }}
+                                        />
+                                    </a>
+                                    <div className="p-5">
+                                        <a>
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                                Micii antreprenori
+                                            </h5>
+                                        </a>
+                                        <p className="mb-3 font-normal text-gray-700">
+                                            A venit timpul să vă prezint și micii eroi
+                                            pentru care sunt "Doamna". Clasa noastră
+                                            este compusă din 6 elevi...
+                                        </p>
+                                        <a
+                                            href="/Post1"
+                                            className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+                                        >
+                                            Citeste mai mult
+                                        </a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
                         </div>
                     </div>
                 </section>
