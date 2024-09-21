@@ -6,11 +6,13 @@ import dedeman from "../../assets/vouchers/dedeman.jpg";
 import emag from "../../assets/vouchers/emag.png";
 import pim from "../../assets/vouchers/pim.png";
 import cardGif from "../../assets/vouchers/card.gif";
-import { FaHandHoldingHeart, FaTimes } from "react-icons/fa";
-import { FaGift } from "react-icons/fa";
+import { FaHandHoldingHeart, FaTimes, FaCheckCircle } from "react-icons/fa";
 import checkmark from "../../assets/vouchers/chckmark.gif";
 import { motion } from "framer-motion";
 import Modal from "react-modal"; // React Modal
+import { FaGift } from "react-icons/fa";
+import Wallet from "./Wallet";
+import mailGif from "../../assets/vouchers/mail.gif";
 
 // Modal styles
 const customModalStyles = {
@@ -43,6 +45,7 @@ const CouponCard = ({ logo, description, code }) => {
   const [selectedAmount, setSelectedAmount] = useState(null);
   const [customAmount, setCustomAmount] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showMessage, setShowMessage] = useState(false); // Control final message display
   const [isFading, setIsFading] = useState(false); // Control for fade animation
 
   const handleButtonClick = () => {
@@ -56,6 +59,7 @@ const CouponCard = ({ logo, description, code }) => {
   const handleCloseModal = () => {
     setIsModalOpen(false);
     setIsSubmitted(false);
+    setShowMessage(false); // Reset message state
     setIsFading(false); // Reset fade state when closing modal
   };
 
@@ -76,7 +80,7 @@ const CouponCard = ({ logo, description, code }) => {
     }, 800); // Fade duration
 
     setTimeout(() => {
-      handleCloseModal(); // Close modal after showing GIF for 3 seconds
+      setShowMessage(true); // Show final message after 5 seconds
     }, 5000); // GIF step lasts longer (5 seconds)
   };
 
@@ -160,6 +164,17 @@ const CouponCard = ({ logo, description, code }) => {
               Confirm
             </button>
           </div>
+        ) : showMessage ? (
+          <div className="text-center flex flex-col align-middle justify-center my-20">
+            {/* Final Message with Icon */}
+            <div className="text-2xl font-semibold flex items-center justify-center space-x-2 mb-4">
+              <span>Voucherul a fost virat în contul dumneavoastră</span>
+              <FaCheckCircle className="text-green-500 text-2xl" />
+            </div>
+
+            {/* GIF Under the Message */}
+            <img src={mailGif} alt="Success" className="w-[50%] mx-auto mt-4" />
+          </div>
         ) : (
           <div
             className={`flex flex-col items-center justify-center transition-opacity duration-1000 ${
@@ -220,10 +235,15 @@ const Vouchers = () => {
   ];
 
   return (
-    <div className="container mx-auto py-8 px-36">
-      <h2 className="text-2xl font-bold text-center mb-8">
-        Top cupoane și promoții
-      </h2>
+    <div className="container mx-auto my-64 px-36">
+      <div className="mb-10 flex space-x-4 w-full align-middle justify-center items-center">
+        <h2 className="text-2xl font-bold flex justify-center items-center align-middle text-center mb-8 w-1/2 py-0 mb-0">
+          <span>Top cupoanele și promoțiile</span>
+        </h2>
+        <div className="w-1/2">
+          <Wallet balance={1500} />
+        </div>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {coupons.map((coupon, index) => (
           <CouponCard

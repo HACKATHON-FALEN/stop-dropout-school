@@ -1,18 +1,159 @@
 import React, { useState } from "react";
 
-import profilePicture from '../assets/img/profile_teacher.jpg'
-import backgroundPicture from '../assets/img/Background.jpg'
-import postareAndra from '../assets/img/andra_postare1.jpg'
-import postareCopii from '../assets/img/poza_principala_postare.jpg'
+import profilePicture from "../assets/img/profile_teacher.jpg";
+import backgroundPicture from "../assets/img/Background.jpg";
+import postareAndra from "../assets/img/andra_postare1.jpg";
+import postareCopii from "../assets/img/poza_principala_postare.jpg";
+import { HiOutlineBadgeCheck } from "react-icons/hi";
+import { FaEye, FaEyeSlash, FaCopy, FaGift } from "react-icons/fa";
+import { BsPrinter } from "react-icons/bs";
 
+// import { FaCopy } from "react-icons/fa";
+import { Tooltip } from "@mui/material"; // Material UI Tooltip
+import { FaHeart } from "react-icons/fa";
+// import FavoriteIcon from "@mui/icons-material/Favorite"; // Heart icon from MUI
+// import AssignmentIcon from "@mui/icons-material/Assignment"; // Report icon from MUI
+import altex from "../../../assets/vouchers/altex.png";
+import daco from "../../../assets/vouchers/daco.jpg";
+import dedeman from "../../../assets/vouchers/dedeman.jpg";
 
+const vouchers = [
+  { id: 1, partnerLogo: altex, name: "Altex", amount: "500", code: "ALT500" },
+  { id: 2, partnerLogo: daco, name: "Daco", amount: "750", code: "ALT500" },
+  {
+    id: 3,
+    partnerLogo: dedeman,
+    name: "Dedeman",
+    amount: "1200",
+    code: "ALT500",
+  },
+];
 
 export default function Profile() {
-  const [isExpanded, setIsExpanded] = useState(false); // State for controlling text expansion
+  // const [isExpanded, setIsExpanded] = useState(false); // State for controlling text expansion
 
+  // const toggleText = () => {
+  //   setIsExpanded(!isExpanded); // Toggle the expansion state
+  // };
+
+  const [activeTab, setActiveTab] = useState("about");
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [revealedVouchers, setRevealedVouchers] = useState({});
+
+  // Toggle expanded state for the "About Me" section
   const toggleText = () => {
-    setIsExpanded(!isExpanded); // Toggle the expansion state
+    setIsExpanded(!isExpanded);
   };
+
+  // Toggle reveal voucher value
+  const toggleRevealVoucher = (voucherId) => {
+    setRevealedVouchers((prev) => ({
+      ...prev,
+      [voucherId]: !prev[voucherId],
+    }));
+  };
+
+  const VoucherCard = () => {
+    const [revealedVouchers, setRevealedVouchers] = useState({}); // Track revealed voucher codes
+
+    // Toggle reveal voucher code
+    const toggleRevealVoucher = (voucherId) => {
+      setRevealedVouchers((prev) => ({
+        ...prev,
+        [voucherId]: !prev[voucherId],
+      }));
+    };
+
+    return (
+      <div className="space-y-8 flex flex-col align-middle justify-center items-center">
+        {/* Vertical spacing for list layout */}
+        {vouchers.map((voucher) => (
+          <div
+            key={voucher.id}
+            className="bg-white border border-gray-200 rounded-lg shadow w-1/2 p-5 flex flex-col items-center space-y-5"
+          >
+            {/* Partner logo */}
+            <img
+              src={voucher.partnerLogo}
+              alt={`Partner ${voucher.id}`}
+              className="w-24 h-24 object-contain mb-4" // Ensures the logo fits nicely
+            />
+
+            {/* Voucher Details */}
+            <h3 className="text-2xl font-bold mb-2">{voucher.name}</h3>
+
+            {/* Voucher Value with Gift Icon */}
+            <div className="flex items-center justify-center w-full mb-4">
+              <FaGift className="text-gray-600 text-2xl mr-2" />
+              <span className="font-semibold text-xl">
+                {voucher.amount} Lei
+              </span>
+            </div>
+
+            {/* Voucher Code (Hidden/Visible) */}
+
+            {/* Hearts to signify trust */}
+
+            <div className="flex items-center justify-between w-1/2 px-4 mb-4">
+              <span className="font-semibold text-xl">
+                {revealedVouchers[voucher.id] ? voucher.code : "*****"}
+              </span>
+
+              {/* Reveal and Copy Icons */}
+              <div className="flex items-center space-x-2">
+                {/* Reveal/Hide Button */}
+                <Tooltip
+                  title={
+                    revealedVouchers[voucher.id]
+                      ? "Ascunde codul voucherului"
+                      : "Arată codul voucherului"
+                  }
+                  arrow
+                >
+                  <button
+                    onClick={() => toggleRevealVoucher(voucher.id)}
+                    className="text-gray-600 hover:text-gray-800"
+                  >
+                    {revealedVouchers[voucher.id] ? (
+                      <FaEyeSlash size={25} />
+                    ) : (
+                      <FaEye size={25} />
+                    )}
+                  </button>
+                </Tooltip>
+
+                {/* Copy Icon (Visible only when the voucher is revealed) */}
+                {revealedVouchers[voucher.id] && (
+                  <Tooltip title="Copiază codul" arrow>
+                    <button className="text-gray-600 hover:text-gray-800">
+                      <FaCopy size={25} />
+                    </button>
+                  </Tooltip>
+                )}
+              </div>
+            </div>
+            <div className="flex justify-around align-middle items-center w-1/2">
+              {/* <div className="flex space-x-2 mb-4"> */}
+              <Tooltip title="Fonduri încredințate profesorului" arrow>
+                <FaHeart className="text-red-500" fontSize="large" />
+              </Tooltip>
+
+              {/* </div> */}
+              <Tooltip title="Emitere Rețetă" arrow>
+                <button className="bg-green-500 text-white p-3 rounded-full hover:bg-green-600 transition duration-300">
+                  <BsPrinter size={30} />
+                </button>
+              </Tooltip>
+              <Tooltip title="Fonduri de încredere" arrow>
+                <FaHeart className="text-red-500" fontSize="large" />
+              </Tooltip>
+            </div>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <>
       <main className="profile-page">
@@ -20,7 +161,7 @@ export default function Profile() {
           <div
             className="absolute top-0 w-full h-full bg-center bg-cover"
             style={{
-              backgroundImage: `url(${backgroundPicture})` // Use the imported image here
+              backgroundImage: `url(${backgroundPicture})`, // Use the imported image here
             }}
           >
             <span
@@ -67,7 +208,6 @@ export default function Profile() {
                           marginTop: "-75px", // Pull the image upwards
                         }}
                       />
-
                     </div>
                   </div>
                   <div className="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center">
@@ -114,63 +254,119 @@ export default function Profile() {
                   </div>
                 </div>
                 <div className="mt-10 py-10 border-t border-gray-300 text-center">
-
                   <div className="flex flex-wrap justify-center">
+                    <div className="container mx-auto py-8 px-36">
+                      {/* Tab Navigation */}
+                      <div className="flex justify-center mb-8 space-x-8">
+                        <button
+                          className={`text-lg font-bold ${
+                            activeTab === "about"
+                              ? "text-blue-600 border-b-2 border-blue-600"
+                              : "text-gray-600"
+                          }`}
+                          onClick={() => setActiveTab("about")}
+                        >
+                          Despre mine
+                        </button>
+                        <button
+                          className={`text-lg font-bold ${
+                            activeTab === "vouchers"
+                              ? "text-blue-600 border-b-2 border-blue-600"
+                              : "text-gray-600"
+                          }`}
+                          onClick={() => setActiveTab("vouchers")}
+                        >
+                          Vouchere
+                        </button>
+                      </div>
 
-                    <div className="w-full lg:w-9/12 px-4">
-                      <h1 style={{ fontSize: '30px' }}>Teacher</h1>
-                      <p className="mb-4 text-lg leading-relaxed text-gray-800">
-                        The profession that creates all other professions.
-                      </p>
-                      <div style={{ display: "flex", justifyContent: "space-between" }}>
-                        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                          <a href="#">
-                            <img
-                              alt="Profile"
-                              src={postareAndra}
-                              style={{ width: "100%", height: "200px", objectFit: "cover" }}
-                            />
-                          </a>
-                          <div class="p-5">
-                            <a href="#">
-                              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Cine sunt?</h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-                              {isExpanded
-                                ? "Mă numesc Andra și fac parte din categoria oamenilor visători care cred în schimbare si in faptul ca impreună putem reuși să facem lumea un loc mai bun . Sunt invățătoare într-o comnitate vulnerabilă din județul Iași și îmi doresc ca elevii mei sa considere școala un spațiu sigur în care pot invăța și visa la lucruri mărețe"
-                                : "Mă numesc Andra și fac parte din categoria oamenilor visători care cred în schimbare si in faptul ca impreună putem reusi..."}
+                      {/* Tab Content */}
+                      {activeTab === "about" && (
+                        <div className="flex flex-wrap justify-center">
+                          <div className="w-full lg:w-9/12 px-4">
+                            <h1 style={{ fontSize: "30px" }}>Teacher</h1>
+                            <p className="mb-4 text-lg leading-relaxed text-gray-800">
+                              The profession that creates all other professions.
                             </p>
                             <div
-                              href="#"
-                              onClick={toggleText}
-                              class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                              style={{
+                                display: "flex",
+                                justifyContent: "space-between",
+                              }}
                             >
-                              {isExpanded ? "Citeste mai puțin" : "Citeste mai mult"}
-                              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                              </svg>
+                              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                                <a href="#">
+                                  <img
+                                    alt="Profile"
+                                    src={postareAndra}
+                                    style={{
+                                      width: "100%",
+                                      height: "200px",
+                                      objectFit: "cover",
+                                    }}
+                                  />
+                                </a>
+                                <div className="p-5">
+                                  <a href="#">
+                                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                      Cine sunt?
+                                    </h5>
+                                  </a>
+                                  <p className="mb-3 font-normal text-gray-700">
+                                    {isExpanded
+                                      ? "Mă numesc Andra și fac parte din categoria oamenilor visători care cred în schimbare si in faptul ca impreună putem reuși să facem lumea un loc mai bun. Sunt invățătoare într-o comnitate vulnerabilă din județul Iași și îmi doresc ca elevii mei sa considere școala un spațiu sigur în care pot invăța și visa la lucruri mărețe."
+                                      : "Mă numesc Andra și fac parte din categoria oamenilor visători care cred în schimbare si in faptul ca impreună putem reusi..."}
+                                  </p>
+                                  <button
+                                    onClick={toggleText}
+                                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+                                  >
+                                    {isExpanded
+                                      ? "Citeste mai puțin"
+                                      : "Citeste mai mult"}
+                                  </button>
+                                </div>
+                              </div>
+
+                              <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+                                <a href="/Post1">
+                                  <img
+                                    className="rounded-t-lg"
+                                    src={postareCopii}
+                                    alt=""
+                                    style={{
+                                      width: "100%",
+                                      height: "200px",
+                                      objectFit: "cover",
+                                    }}
+                                  />
+                                </a>
+                                <div className="p-5">
+                                  <a href="#">
+                                    <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900">
+                                      Micii antreprenori
+                                    </h5>
+                                  </a>
+                                  <p className="mb-3 font-normal text-gray-700">
+                                    A venit timpul să vă prezint și micii eroi
+                                    pentru care sunt "Doamna". Clasa noastră
+                                    este compusă din 6 elevi...
+                                  </p>
+                                  <a
+                                    href="/Post1"
+                                    className="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-blue-700 rounded-lg hover:bg-blue-800"
+                                  >
+                                    Citeste mai mult
+                                  </a>
+                                </div>
+                              </div>
                             </div>
                           </div>
                         </div>
-                        <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                          <a href="/Post1">
-                            <img class="rounded-t-lg" src={postareCopii} alt="" style={{ width: "100%", height: "200px", objectFit: "cover" }} />
-                          </a>
-                          <div class="p-5">
-                            <a href="#">
-                              <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Micii antreprenori</h5>
-                            </a>
-                            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">A venit timpul să vă prezint și micii eroi pentru care sunt "Doamna". Clasa noastră este compusă din 6 elevi...</p>
-                            <a href="/Post1" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                              Citeste mai mult
-                              <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                              </svg>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+                      )}
 
+                      {/* Vouchers Tab */}
+                      {activeTab === "vouchers" && <VoucherCard />}
                     </div>
                   </div>
                 </div>
