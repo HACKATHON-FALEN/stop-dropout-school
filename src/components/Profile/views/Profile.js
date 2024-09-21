@@ -175,6 +175,7 @@ export default function Profile() {
 
   return (
     <>
+      <Navbar transparent></Navbar>
       <main className="profile-page">
         <section className="relative block" style={{ height: "500px" }}>
           <div
