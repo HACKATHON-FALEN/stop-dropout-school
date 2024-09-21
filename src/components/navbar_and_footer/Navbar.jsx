@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import profile from "./andra.jpg";
 
 export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -151,6 +152,11 @@ export default function Navbar(props) {
                 style={{ transition: "all .15s ease" }}
               >
                 <i className="fas fa-arrow-alt-circle-down"></i> Contribuie
+              </button>
+              <button>
+                <a href="/profile">
+                  <img src={profile} className="size-10 rounded-full" alt="" />
+                </a>
               </button>
             </li>
           </ul>
