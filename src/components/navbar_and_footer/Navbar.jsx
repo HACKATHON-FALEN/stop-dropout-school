@@ -4,7 +4,7 @@ export default function Navbar(props) {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  console.log(props)
+  console.log(props);
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -23,8 +23,6 @@ export default function Navbar(props) {
       return () => {
         window.removeEventListener("scroll", handleScroll);
       };
-
-
     }
   }, []);
 
@@ -44,7 +42,11 @@ export default function Navbar(props) {
             href="/"
           >
             <img
-              src={isScrolled ? require("./assets/logo-colored.png") : require("./assets/logo-white.png")}
+              src={
+                isScrolled
+                  ? require("./assets/logo-colored.png")
+                  : require("./assets/logo-white.png")
+              }
               alt="Logo"
               className="h-12"
             />
@@ -55,7 +57,9 @@ export default function Navbar(props) {
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
             <i
-              className={(isScrolled ? "text-gray-800" : "text-white") + " fas fa-bars"}
+              className={
+                (isScrolled ? "text-gray-800" : "text-white") + " fas fa-bars"
+              }
             ></i>
           </button>
         </div>
@@ -75,9 +79,9 @@ export default function Navbar(props) {
                     : "lg:text-white lg:hover:text-gray-300 text-gray-800") +
                   " px-3 py-4 lg:py-2 flex items-center text-xs uppercase font-bold"
                 }
-                href="https://www.creative-tim.com/learning-lab/tailwind-starter-kit#/landing"
+                href="/Vouchers"
               >
-                Descoperă
+                Vouchers
               </a>
               <a
                 className={
@@ -90,8 +94,6 @@ export default function Navbar(props) {
               >
                 {" "}
               </a>
-
-
             </li>
           </ul>
           <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
@@ -119,7 +121,6 @@ export default function Navbar(props) {
                 }
                 href="#pablo"
               >
-
                 <span className="lg:hidden inline-block ml-2">Tweet</span>
               </a>
             </li>
