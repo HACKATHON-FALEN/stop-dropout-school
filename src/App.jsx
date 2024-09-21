@@ -10,6 +10,7 @@ import Login from "./components/Login/views/Login";
 import Post1 from "./components/Posts/Post1/post1";
 import Vouchers from "./components/Vouchers";
 import ProfileDirector from "./components/ProfileDirector/views/Profile";
+import OrnamentsAuction from "./components/Auction/view/auction";
 
 const Fallback = (
   <div className="loader-container">
@@ -78,7 +79,7 @@ const App = () => {
           <Route path="Chat" element={<Chat></Chat>} />
           <Route path="Login" element={<Login></Login>} />
           <Route path="/feed" element={<Feed />} />
-          <Route  
+          <Route
             path="Vouchers"
             element={
               <Layout>
@@ -86,6 +87,17 @@ const App = () => {
               </Layout>
             }
           />
+
+          <Route
+            path="Auction"
+            element={
+              <Layout>
+                <OrnamentsAuction />
+              </Layout>
+            }
+          />
+
+
         </Routes>
       </Suspense>
     </Fragment>
