@@ -81,7 +81,7 @@ export default function Profile() {
         {vouchers.map((voucher) => (
           <div
             key={voucher.id}
-            className="bg-white border border-gray-200 rounded-lg shadow w-1/2 p-5 flex flex-col items-center space-y-5"
+            className="bg-white border border-gray-200 rounded-lg shadow-2xl w-1/2 p-5 flex flex-col items-center space-y-5"
           >
             {/* Partner logo */}
             <img
@@ -92,6 +92,7 @@ export default function Profile() {
 
             {/* Voucher Details */}
             <h3 className="text-2xl font-bold mb-2">{voucher.name}</h3>
+            <hr className="border-t-2 border-gray-300 w-3/4 my-4" />
 
             {/* Voucher Value with Gift Icon */}
             <div className="flex items-center justify-center w-full mb-4">
@@ -105,7 +106,7 @@ export default function Profile() {
 
             {/* Hearts to signify trust */}
 
-            <div className="flex items-center justify-between w-1/2 px-4 mb-4">
+            <div className="flex items-center justify-between w-3/4 px-4 mb-4">
               <span className="font-semibold text-xl">
                 {revealedVouchers[voucher.id] ? voucher.code : "*****"}
               </span>
@@ -143,6 +144,8 @@ export default function Profile() {
                 )}
               </div>
             </div>
+            <hr className="border-t-2 border-gray-300 w-3/4 my-4" />
+
             <div className="flex justify-around align-middle items-center w-1/2">
               {/* <div className="flex space-x-2 mb-4"> */}
               <Tooltip title="Fonduri încredințate profesorului" arrow>

@@ -238,7 +238,7 @@ const Vouchers = () => {
     <div className="container mx-auto my-64 px-36">
       <div className="mb-10 flex space-x-4 w-full align-middle justify-center items-center">
         <h2 className="text-2xl font-bold flex justify-center items-center align-middle text-center mb-8 w-1/2 py-0 mb-0">
-          <span>Top cupoanele și promoțiile</span>
+          <span>Parteneri disponibli</span>
         </h2>
         <div className="w-1/2">
           <Wallet balance={1500} />
