@@ -273,21 +273,19 @@ export default function Profile() {
                       {/* Tab Navigation */}
                       <div className="flex justify-center mb-8 space-x-8">
                         <button
-                          className={`text-lg font-bold ${
-                            activeTab === "about"
+                          className={`text-lg font-bold ${activeTab === "about"
                               ? "text-blue-600 border-b-2 border-blue-600"
                               : "text-gray-600"
-                          }`}
+                            }`}
                           onClick={() => setActiveTab("about")}
                         >
                           Despre mine
                         </button>
                         <button
-                          className={`text-lg font-bold ${
-                            activeTab === "vouchers"
+                          className={`text-lg font-bold ${activeTab === "vouchers"
                               ? "text-blue-600 border-b-2 border-blue-600"
                               : "text-gray-600"
-                          }`}
+                            }`}
                           onClick={() => setActiveTab("vouchers")}
                         >
                           Vouchere
